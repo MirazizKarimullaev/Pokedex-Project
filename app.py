@@ -44,3 +44,10 @@ def show_pokemon():
     elif print_names == "y":
         for i in range(len(data_pokedexlist)):
             print(data_pokedexlist[i]["name"][lang])
+def show_pokemon_type():
+    im_too_lazy_to_make_this_better_find_type = input("ok sir/ma'am, i'm too lazy to make this better, SO, type the type you want letter for letter, ENGLISH PLEASE AND CAPATALISE THE FIRST LETTER, I KNOW YOU DONT KNOW HOW TO TYPE IN ANY OTHER LANGUAGE, EVEN IF YOU DO, HOW ARE YOU READING THIS???")
+    if im_too_lazy_to_make_this_better_find_type == "Normal":
+        find_type_rn = "Normal"
+    elif im_too_lazy_to_make_this_better_find_type == "Fighting":
+        find_type_rn = "Fighting"
+        
