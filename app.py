@@ -139,5 +139,11 @@ def show_pokemon_type():
 def show_pokemon_search_drool():
     while True:
         search = input("ok, so, type any pokemons name and ill find it ")
+
 show_pokemon()
 show_pokemon_type()
+def find_poke_search():
+    while True:
+        search_pokemon_not_full_name_this_is_long_because_why_not_yes_frfr = input("ok so im too lazy to do this efficently so just type man\n")
+        while True:
+            d
