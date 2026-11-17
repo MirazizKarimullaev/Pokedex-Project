@@ -1,4 +1,3 @@
-hi = "QWErTyUiOpAsdfGhJklzXcVbNm"
-print(hi.lower)
-bye = hi.upper
-print(bye)
+h = "ASRAJFEFA 124 FFAEWF"
+h = h.lower()
+print(h)

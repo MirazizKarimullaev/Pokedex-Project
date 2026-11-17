@@ -137,7 +137,33 @@ def show_pokemon_type():
                 print(data_pokedexlist[i]["name"][lang])
                 time.sleep(0.01)
 def show_pokemon_search_drool():
+    print("ok, so, type any pokemons name and ill find it if you want, type it partially")
     while True:
-        search = input("ok, so, type any pokemons name and ill find it ")
+        amount_found = 0
+        search = input("name?/partial name?")
+        for idk_bro_help_me_i_dont_wana in range(len(data_pokedexlist)):
+            search_2 = search.lower()
+            name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang].lower()
+            if search_2 in name_2:
+                amount_found +=1
+                print(data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang])
+        if amount_found == 0:
+            print("sry i find no pokemon of your search")
+        done_search_name_check = "qwerty"
+        while done_search_name_check == "qwerty":
+            done_search_name = input("wanna search again?, y if again, n if no more?\n")
+            if done_search_name == "y":
+                done_search_name_check = "yes"
+            elif done_search_name == "n":
+                done_search_name_check = "no"
+                break
+            else:
+                continue
+            break
+        break
+def show_pokemon_moves_from_type_droororoororol():
+    rulgleruileaw
 show_pokemon()
 show_pokemon_type()
+show_pokemon_search_drool()
+
