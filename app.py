@@ -140,7 +140,7 @@ def show_pokemon_search_drool():
     print("ok, so, type any pokemons name and ill find it if you want, type it partially")
     while True:
         amount_found = 0
-        search = input("name?/partial name?")
+        search = input("name?/partial name?\n")
         for idk_bro_help_me_i_dont_wana in range(len(data_pokedexlist)):
             search_2 = search.lower()
             name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang].lower()
@@ -162,7 +162,20 @@ def show_pokemon_search_drool():
             break
         break
 def show_pokemon_moves_from_type_droororoororol():
-    rulgleruileaw
+    while True:
+        amount_found = 0
+        search = input("name?/partial name?\n")
+        for idk_bro_help_me_i_dont_wana in range(len(data_pokedexlist)):
+            search_2 = search.lower()
+            name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang].lower()
+            if search_2 in name_2:
+                amount_found +=1
+                print(data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang])
+        if amount_found == 0:
+            print("sry i find no pokemon of your search")
+        elif amount_found == 1:
+            pokemon_choose_find_moves = input("do you want to use this pokemon?\n")
+        break
 show_pokemon()
 show_pokemon_type()
 show_pokemon_search_drool()
