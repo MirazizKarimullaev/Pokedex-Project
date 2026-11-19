@@ -52,83 +52,10 @@ def show_pokemon():
         print("huh? ill take that as a no")
 def show_pokemon_type():
     find_type_rn = "abcdefg"
-    im_too_lazy_to_make_this_better_find_type = input("ok sir/ma'am, i'm too lazy to make this better, SO, type the type you want letter for letter, ENGLISH PLEASE AND CAPATALISE THE FIRST LETTER, I KNOW YOU DONT KNOW HOW TO TYPE IN ANY OTHER LANGUAGE, EVEN IF YOU DO, HOW ARE YOU READING THIS???\n")
-    if im_too_lazy_to_make_this_better_find_type == "Normal":
-        find_type_rn = "Normal"
-    elif im_too_lazy_to_make_this_better_find_type == "Fighting":
-        find_type_rn = "Fighting"
-    elif im_too_lazy_to_make_this_better_find_type == "Flying":
-        find_type_rn = "Flying"
-    elif im_too_lazy_to_make_this_better_find_type == "Poison":
-        find_type_rn = "Poison"
-    elif im_too_lazy_to_make_this_better_find_type == "Ground":
-        find_type_rn = "Ground"
-    elif im_too_lazy_to_make_this_better_find_type == "Rock":
-        find_type_rn = "Rock"
-    elif im_too_lazy_to_make_this_better_find_type == "Bug":
-        find_type_rn = "Bug"
-    elif im_too_lazy_to_make_this_better_find_type == "Ghost":
-        find_type_rn = "Ghost"
-    elif im_too_lazy_to_make_this_better_find_type == "Steel":
-        find_type_rn = "Steel"
-    elif im_too_lazy_to_make_this_better_find_type == "Fire":
-        find_type_rn = "Fire"
-    elif im_too_lazy_to_make_this_better_find_type == "Water":
-        find_type_rn = "Water"
-    elif im_too_lazy_to_make_this_better_find_type == "Grass":
-        find_type_rn = "Grass"
-    elif im_too_lazy_to_make_this_better_find_type == "Electric":
-        find_type_rn = "Electric"
-    elif im_too_lazy_to_make_this_better_find_type == "Psychic":
-        find_type_rn = "Psychic"
-    elif im_too_lazy_to_make_this_better_find_type == "Ice":
-        find_type_rn = "Ice"
-    elif im_too_lazy_to_make_this_better_find_type == "Dragon":
-        find_type_rn = "Dragon"
-    elif im_too_lazy_to_make_this_better_find_type == "Dark":
-        find_type_rn = "Dark"
-    elif im_too_lazy_to_make_this_better_find_type == "Fairy":
-        find_type_rn = "Fairy"
-    while find_type_rn == "abcdefg":
-        print("so, what did you type? did you misspell it :sob:, or did you not capilize it? or a numbeer, or spaces? Either way, try again")
-        print("you know what, here is all the types\nNormal\nFighting\nFlying\nPoison\nGround\nRock\nBug\nGhost\nSteel\nFire\nWater\nGrass\nElectric\nPsychic\nIce\nDragon\nDark\nFairy\n")
-        im_too_lazy_to_make_this_better_find_type = input("what type?\n")
-        if im_too_lazy_to_make_this_better_find_type == "Normal":
-            find_type_rn = "Normal"
-        elif im_too_lazy_to_make_this_better_find_type == "Fighting":
-            find_type_rn = "Fighting"
-        elif im_too_lazy_to_make_this_better_find_type == "Flying":
-            find_type_rn = "Flying"
-        elif im_too_lazy_to_make_this_better_find_type == "Poison":
-            find_type_rn = "Poison"
-        elif im_too_lazy_to_make_this_better_find_type == "Ground":
-            find_type_rn = "Ground"
-        elif im_too_lazy_to_make_this_better_find_type == "Rock":
-            find_type_rn = "Rock"
-        elif im_too_lazy_to_make_this_better_find_type == "Bug":
-            find_type_rn = "Bug"
-        elif im_too_lazy_to_make_this_better_find_type == "Ghost":
-            find_type_rn = "Ghost"
-        elif im_too_lazy_to_make_this_better_find_type == "Steel":
-            find_type_rn = "Steel"
-        elif im_too_lazy_to_make_this_better_find_type == "Fire":
-            find_type_rn = "Fire"
-        elif im_too_lazy_to_make_this_better_find_type == "Water":
-            find_type_rn = "Water"
-        elif im_too_lazy_to_make_this_better_find_type == "Grass":
-            find_type_rn = "Grass"
-        elif im_too_lazy_to_make_this_better_find_type == "Electric":
-            find_type_rn = "Electric"
-        elif im_too_lazy_to_make_this_better_find_type == "Psychic":
-            find_type_rn = "Psychic"
-        elif im_too_lazy_to_make_this_better_find_type == "Ice":
-            find_type_rn = "Ice"
-        elif im_too_lazy_to_make_this_better_find_type == "Dragon":
-            find_type_rn = "Dragon"
-        elif im_too_lazy_to_make_this_better_find_type == "Dark":
-            find_type_rn = "Dark"
-        elif im_too_lazy_to_make_this_better_find_type == "Fairy":
-            find_type_rn = "Fairy"
+    finding = input("find pokemon from type: ")
+    for i in range(len(data_types)):
+        if finding.lower() == data_types[i][lang].lower():
+            find_type_rn = finding.title()
     print("ok here are the pokemon with said type")
     time.sleep(1)
     for i in range(len(data_pokedexlist)):
@@ -174,9 +101,31 @@ def show_pokemon_moves_from_type_droororoororol():
         if amount_found == 0:
             print("sry i find no pokemon of your search")
         elif amount_found == 1:
-            pokemon_choose_find_moves = input("do you want to use this pokemon?\n")
-        break
+            print("hm i only found 1")
+            while True:
+                pokemon_choose_find_moves = input("do you want to use this pokemon? y or n \n")
+                if pokemon_choose_find_moves == "y":
+                    for idk_bro_help_me_i_dont_wana in range(len(data_pokedexlist)):
+                        search_2 = search.lower()
+                        name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang].lower()
+                        if search_2 in name_2:
+                            data_pokemon_move_find = idk_bro_help_me_i_dont_wana
+                            break
+                            return
+                    return
+                elif pokemon_choose_find_moves != "n" and pokemon_choose_find_moves != "y":
+                    x=1
+                else:
+                    print("ok")
+                    return
+    print("so you found your pokemon")
+
+'''
 show_pokemon()
 show_pokemon_type()
 show_pokemon_search_drool()
 
+show_pokemon_moves_from_type_droororoororol()
+'''
+
+show_pokemon_type()
