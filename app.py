@@ -38,11 +38,13 @@ def show_pokemon_type():
     find_type_rn = "abcdefg"
     finding_check = False
     while finding_check == False:
-        finding = input("find pokemon from type: ")
+        finding = input("find pokemon from english type: ")
         for types_7 in data_types:
             if finding.lower() == types_7['english'].lower():
                 finding_check = True
                 find_type_rn = finding.title()
+            else:
+                print("Type not found")
     print("ok here are the pokemon with said type")
     time.sleep(1)
     for i in data_pokedexlist:
@@ -54,12 +56,11 @@ def show_pokemon_search_drool():
     while True:
         amount_found = 0
         search = input("name?/partial name?\n")
-        for idk_bro_help_me_i_dont_wana in range(len(data_pokedexlist)):
-            search = search.title()
-            name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang]
-            if search in name_2:
+        for idk_bro_help_me_i_dont_wana in data_pokedexlist:
+            name_2 = idk_bro_help_me_i_dont_wana["name"][lang]
+            if search.lower() in name_2.lower():
                 amount_found +=1
-                print(data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang])
+                print(idk_bro_help_me_i_dont_wana["name"][lang])
         if amount_found == 0:
             print("sry i find no pokemon of your search")
         done_search_name_check = "qwerty"
@@ -72,18 +73,18 @@ def show_pokemon_search_drool():
                 break
             else:
                 continue
-            break
-        break
 def show_pokemon_moves_from_type_droororoororol():
     while True:
         amount_found = 0
         search = input("name?/partial name?\n")
-        for idk_bro_help_me_i_dont_wana in range(len(data_pokedexlist)):
+        for idk_bro_help_me_i_dont_wana in data_pokedexlist:
             search_2 = search.lower()
-            name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang].lower()
+            name_2 = idk_bro_help_me_i_dont_wana["name"][lang].lower()
             if search_2 in name_2:
                 amount_found +=1
-                print(data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang])
+                print(idk_bro_help_me_i_dont_wana["name"][lang])
+                if amount_found == 1:
+                    iDK_ME_VARIABLES = idk_bro_help_me_i_dont_wana["name"][lang]
         if amount_found == 0:
             print("sry i find no pokemon of your search")
         elif amount_found == 1:
@@ -96,15 +97,14 @@ def show_pokemon_moves_from_type_droororoororol():
                         name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang].lower()
                         if search_2 in name_2:
                             data_pokemon_move_find = idk_bro_help_me_i_dont_wana
-                            break
-                            return
-                    return
+
+                    
                 elif pokemon_choose_find_moves != "n" and pokemon_choose_find_moves != "y":
                     x=1
                 else:
                     print("ok")
-                    return
+                    
     print("so you found your pokemon")
 
 
-show_pokemon_type()
+show_pokemon_moves_from_type_droororoororol()
