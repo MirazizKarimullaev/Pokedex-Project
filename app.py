@@ -77,7 +77,10 @@ def show_pokemon_moves_from_type_droororoororol():
     while True:
         amount_found = 0
         search = input("name?/partial name?\n")
+        m = 0
+        m = m-1
         for idk_bro_help_me_i_dont_wana in data_pokedexlist:
+            m += 1
             search_2 = search.lower()
             name_2 = idk_bro_help_me_i_dont_wana["name"][lang].lower()
             if search_2 in name_2:
@@ -85,26 +88,32 @@ def show_pokemon_moves_from_type_droororoororol():
                 print(idk_bro_help_me_i_dont_wana["name"][lang])
                 if amount_found == 1:
                     iDK_ME_VARIABLES = idk_bro_help_me_i_dont_wana["name"][lang]
+                    poke_num = m
         if amount_found == 0:
             print("sry i find no pokemon of your search")
+            print("try searching again")
+            continue
+        if amount_found != 1:
+            print("sry i find no pokemon of your search")
+            print("try searching again")
+            continue
         elif amount_found == 1:
             print("hm i only found 1")
             while True:
+                print(f"so i found {iDK_ME_VARIABLES}")
                 pokemon_choose_find_moves = input("do you want to use this pokemon? y or n \n")
                 if pokemon_choose_find_moves == "y":
-                    for idk_bro_help_me_i_dont_wana in range(len(data_pokedexlist)):
-                        search_2 = search.lower()
-                        name_2 = data_pokedexlist[idk_bro_help_me_i_dont_wana]["name"][lang].lower()
-                        if search_2 in name_2:
-                            data_pokemon_move_find = idk_bro_help_me_i_dont_wana
-
-                    
+                    hi = []
+                    for rangr in range(len(pokedex[m]["type"])):
+                        hi.append(pokedex[m]["type"][rangr])
                 elif pokemon_choose_find_moves != "n" and pokemon_choose_find_moves != "y":
-                    x=1
+                    continue
                 else:
                     print("ok")
-                    
-    print("so you found your pokemon")
-
-
+                    break
+            break
+    print("give me a second ima find thew moves")
+    for move in moves:
+        if move["type"] in hi:
+            print(move["ename"])
 show_pokemon_moves_from_type_droororoororol()
