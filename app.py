@@ -39,12 +39,14 @@ def show_pokemon_type():
     finding_check = False
     while finding_check == False:
         finding = input("find pokemon from english type: ")
+        p = False
         for types_7 in data_types:
             if finding.lower() == types_7['english'].lower():
                 finding_check = True
                 find_type_rn = finding.title()
-            else:
-                print("Type not found")
+                p = True
+        if p == False:
+            print("Type not found")
     print("ok here are the pokemon with said type")
     time.sleep(1)
     for i in data_pokedexlist:
@@ -73,12 +75,12 @@ def show_pokemon_search_drool():
                 break
             else:
                 continue
+        break
 def show_pokemon_moves_from_type_droororoororol():
     while True:
         amount_found = 0
         search = input("name?/partial name?\n")
-        m = 0
-        m = m-1
+        m = -1
         for idk_bro_help_me_i_dont_wana in data_pokedexlist:
             m += 1
             search_2 = search.lower()
@@ -94,26 +96,29 @@ def show_pokemon_moves_from_type_droororoororol():
             print("try searching again")
             continue
         if amount_found != 1:
-            print("sry i find no pokemon of your search")
             print("try searching again")
             continue
         elif amount_found == 1:
             print("hm i only found 1")
             while True:
                 print(f"so i found {iDK_ME_VARIABLES}")
-                pokemon_choose_find_moves = input("do you want to use this pokemon? y or n \n")
+                pokemon_choose_find_moves = input("do you want to use this pokemon? y or n - (to change) \n")
                 if pokemon_choose_find_moves == "y":
                     hi = []
-                    for rangr in range(len(pokedex[m]["type"])):
-                        hi.append(pokedex[m]["type"][rangr])
+                    hi.append(data_pokedexlist[poke_num]["type"])
+                    break
                 elif pokemon_choose_find_moves != "n" and pokemon_choose_find_moves != "y":
                     continue
-                else:
+                elif pokemon_choose_find_moves == "n":
                     print("ok")
                     break
             break
-    print("give me a second ima find thew moves")
-    for move in moves:
-        if move["type"] in hi:
-            print(move["ename"])
+    if pokemon_choose_find_moves == "y":
+        print("give me a second ima find the moves")
+        for move in data_moves:
+            if move["type"] in hi[0]:
+                print(move["ename"])
+show_pokemon()
+show_pokemon_type()
+show_pokemon_search_drool()
 show_pokemon_moves_from_type_droororoororol()
